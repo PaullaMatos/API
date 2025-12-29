@@ -17,8 +17,7 @@ import org.mockito.MockitoAnnotations;
 
 import apisimples.example.api.model.ClienteModel;
 import apisimples.example.api.repository.ClienteRepository;
-import apisimples.example.api.service.ClienteService;
-import lombok.extern.slf4j.Slf4j;
+
 
 class ClienteServiceTest {
 

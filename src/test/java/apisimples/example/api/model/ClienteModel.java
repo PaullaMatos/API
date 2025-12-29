@@ -2,7 +2,6 @@ package apisimples.example.api.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.extern.slf4j.Slf4j;
 
 @Entity
 @Table(name = "clientes")

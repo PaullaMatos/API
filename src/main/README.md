@@ -73,6 +73,5 @@ Importe no Postman e teste os endpoints.
 
 ## CI/CD e Qualidade de Código
 
-- **Logs** configurados com Slf4j
 - **GitHub Actions**: build e testes automáticos
 

@@ -69,7 +69,6 @@ public class ClienteService {
 
 
     public ClienteModel salvar(ClienteModel cliente) {
-        // TODO Auto-generated method stub
      return repository.save(cliente);
 }
 }
