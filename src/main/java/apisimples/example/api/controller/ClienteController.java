@@ -22,41 +22,41 @@ public class ClienteController {
     }
 
    
-    @GetMapping
+    @GetMapping("/listar")
     public ResponseEntity<List<ClienteModel>> getAllClientes() {
         return ResponseEntity.ok(service.listarTodos());
     }
 
    
-    @GetMapping("/search")
+    @GetMapping("/buscar")
     public ResponseEntity<Page<ClienteModel>> getClientesPaginado(
-            @RequestParam(required = false) String nome,
-            Pageable pageable) {
+         String nome,
+         Pageable pageable) {
         Page<ClienteModel> page = service.listarPaginado(nome, pageable);
         return ResponseEntity.ok(page);
     }
 
   
-    @GetMapping("/{id}")
+    @GetMapping("/id")
     public ResponseEntity<Object> getClienteById(@PathVariable Long id) {
         return ResponseEntity.ok(service.buscarPorId(id));
     }
 
   
-    @PostMapping
+    @PostMapping("/criar")
     public ResponseEntity<ClienteModel> createCliente(@Valid @RequestBody ClienteModel cliente) {
         ClienteModel saved = service.criar(cliente);
         return ResponseEntity.status(HttpStatus.CREATED).body(saved);
     }
 
     
-    @PutMapping("/{id}")
+    @PutMapping("/atualizar")
     public ResponseEntity<Object> updateCliente(@PathVariable Long id, @Valid @RequestBody ClienteModel cliente) {
         return ResponseEntity.ok(service.atualizar(id, cliente));
     }
 
     
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deletar")
     public ResponseEntity<Void> deleteCliente(@PathVariable Long id) {
         service.deletar(id);
         return ResponseEntity.noContent().build();
